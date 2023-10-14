@@ -1,4 +1,164 @@
-<div class="logo">
-    <img src="./assets/images/logo.jpg" width="300" />
-    <p>Coming soon...</p>
-</div>
+<ion-header class="ion-text-center">
+    <img src="./assets/images/logo.jpg" width="200" />
+</ion-header>
+<ion-content>
+    <div class="flex">
+        <div class="left-side">
+            <ion-accordion-group>
+                <ion-accordion value="first">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="ort-bg theme"></div>
+                            <ion-label>Orte</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Ort')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="second">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="held-bg theme"></div>
+                            <ion-label>Helden</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Held')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="third">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="schurke-bg theme"></div>
+                            <ion-label>Schurken</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Schurke')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="four">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="verbuendeter-bg theme"></div>
+                            <ion-label>Verbündete</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Verbuendeter')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="five">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="manoever-bg theme"></div>
+                            <ion-label>Manöver</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Manoever')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="six">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="zustand-bg theme"></div>
+                            <ion-label>Zustände</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Zustand')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+                <ion-accordion value="seven">
+                    <ion-item slot="header" color="light">
+                        <div class="flex ion-align-items-center">
+                            <div class="ausruestung-bg theme"></div>
+                            <ion-label>Ausrüstung</ion-label>
+                        </div>
+                    </ion-item>
+                    <div slot="content">
+                        <ion-list>
+                            <ion-item
+                                *ngFor="let card of filterCardsByCategory(cards, 'Ausruestung')"
+                                lines="full"
+                                (click)="addCard(card)"
+                                >{{ card.name }}</ion-item
+                            >
+                        </ion-list>
+                    </div>
+                </ion-accordion>
+            </ion-accordion-group>
+        </div>
+        <div class="right-side">
+            <ng-container *ngIf="activeCards.length > 0">
+                <ion-button (click)="reset()">Reset</ion-button>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-subtitle
+                            >{{ activeCards.length }} von {{ MAX_LENGTH_OF_ACTIVE_CARDS }} Karten</ion-card-subtitle
+                        >
+                        <ion-card-title>Auswertung</ion-card-title>
+                    </ion-card-header>
+
+                    <ion-card-content>
+                        <ion-list>
+                            <ion-item *ngFor="let activeCard of activeCards; let index = index">
+                                <ion-label
+                                    >{{ activeCard.name }}
+                                    <span class="small">({{ activeCard.category }})</span></ion-label
+                                >
+                                <span class="pointer" (click)="removeCard(index, activeCard.id)">&#10060;</span>
+                            </ion-item>
+                        </ion-list>
+
+                        <h3 class="result">Punktzahl: {{ result }}</h3>
+                    </ion-card-content>
+                </ion-card>
+            </ng-container>
+        </div>
+    </div>
+</ion-content>
