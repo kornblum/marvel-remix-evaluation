@@ -1,7 +1,36 @@
-.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.flex {
+    display: flex;
+}
+
+ion-accordion > ion-item {
+    --padding-start: 0;
+
+    ion-label {
+        padding-left: 6px;
+    }
+}
+ion-list {
+    padding: 0;
+}
+
+.left-side {
+    width: 100%;
+    max-width: 300px;
+}
+
+.right-side {
+    width: 100%;
+    padding: 12px 24px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.result {
     text-align: center;
+    font-size: 18px;
+    margin-top: 24px;
+    color: black;
+    font-weight: bold;
 }
