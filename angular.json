@@ -101,10 +101,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "marvel-remix-evaluation:build:production"
+                          "buildTarget": "marvel-remix-evaluation:build:production"
                         },
                         "development": {
-                            "browserTarget": "marvel-remix-evaluation:build:development"
+                          "buildTarget": "marvel-remix-evaluation:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -112,7 +112,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "marvel-remix-evaluation:build"
+                      "buildTarget": "marvel-remix-evaluation:build"
                     }
                 },
                 "test": {
