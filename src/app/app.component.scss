@@ -11,6 +11,10 @@ ion-accordion > ion-item {
 }
 ion-list {
     padding: 0;
+
+    ion-item.active {
+        --background: lightgrey;
+    }
 }
 
 .left-side {

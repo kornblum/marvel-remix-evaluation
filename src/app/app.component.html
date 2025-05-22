@@ -18,6 +18,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Ort')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>
@@ -36,6 +37,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Held')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>
@@ -54,6 +56,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Schurke')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>
@@ -72,6 +75,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Verbuendeter')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>
@@ -90,6 +94,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Manoever')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>
@@ -108,6 +113,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Zustand')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>
@@ -126,6 +132,7 @@
                                 *ngFor="let card of filterCardsByCategory(cards, 'Ausruestung')"
                                 lines="full"
                                 (click)="addCard(card)"
+                                [class.active]="card.isChoose"
                                 >{{ card.name }}</ion-item
                             >
                         </ion-list>

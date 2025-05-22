@@ -101,6 +101,7 @@ export class AppComponent {
             }
         });
 
+        this.result = this.activeCards.reduce((sum, item) => sum + (item.result || 0), 0);
         console.log(this.activeCards);
     }
 }
