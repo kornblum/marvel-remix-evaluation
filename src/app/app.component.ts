@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { cardsValue } from './values/cards.value';
 import { Card, Category } from './types/card.type';
@@ -9,9 +9,7 @@ import { RulesService } from './services/rules.service';
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
-    title = 'marvel-remix-evaluation';
-
+export class AppComponent {
     public result: number = 0;
 
     public cards: Card[] = cardsValue;
@@ -22,12 +20,12 @@ export class AppComponent implements OnInit {
 
     private rulesService: RulesService = inject(RulesService);
 
-    ngOnInit(): void {
-        console.log(cardsValue);
-    }
-
     public filterCardsByCategory(cards: Card[], category: Category): Card[] {
-        return cards.filter(card => card.category === category);
+        return cards
+            .filter(card => card.category === category)
+            .sort((a, b) => {
+                return a.name <= b.name ? -1 : 1;
+            });
     }
 
     public addCard(card: Card): void {
@@ -72,6 +70,36 @@ export class AppComponent implements OnInit {
             return;
         }
 
-        this.result = this.rulesService.addBasePoints(this.activeCards);
+        this.activeCards.forEach((card: Card, index: number): void => {
+            if (card.isBlocked === undefined || !card.isBlocked) {
+                const otherHandCards = this.activeCards.filter(otherCard => otherCard.id !== card.id);
+                card.result = card.basePoints;
+
+                if (card.transformation) {
+                    if (this.rulesService.hasHeroTransformation(card.transformation, otherHandCards)) {
+                        card.symbols = card.transformationSymbols;
+                        card.result = card.transformationPoints;
+                    } else {
+                        card.symbols = card.basicSymbols;
+                    }
+                }
+            }
+        });
+
+        this.activeCards.forEach((card: Card, index: number): void => {
+            if (card.isBlocked === undefined || !card.isBlocked) {
+                const otherHandCards = this.activeCards.filter(otherCard => otherCard.id !== card.id);
+                if (otherHandCards.length > 0) {
+                    if (card.bonus) {
+                        card.result! += this.rulesService.calculateBonus(card.bonus, otherHandCards);
+                    }
+                    if (card.punishment) {
+                        card.result! += this.rulesService.calculatePunishment(card.punishment, otherHandCards);
+                    }
+                }
+            }
+        });
+
+        console.log(this.activeCards);
     }
 }

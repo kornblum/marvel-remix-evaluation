@@ -34,3 +34,13 @@ ion-list {
     color: black;
     font-weight: bold;
 }
+
+.circle {
+    background: black;
+    color: white;
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    text-align: center;
+}

@@ -148,7 +148,10 @@
                         <ion-list>
                             <ion-item *ngFor="let activeCard of activeCards; let index = index">
                                 <ion-label
-                                    >{{ activeCard.name }}
+                                    ><span class="circle" *ngIf="activeCard.result !== undefined">{{
+                                        activeCard.result
+                                    }}</span>
+                                    {{ activeCard.name }}
                                     <span class="small">({{ activeCard.category }})</span></ion-label
                                 >
                                 <span class="pointer" (click)="removeCard(index, activeCard.id)">&#10060;</span>

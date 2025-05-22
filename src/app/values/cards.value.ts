@@ -8,6 +8,14 @@ export const cardsValue: Card[] = [
         category: 'Schurke',
         symbols: [],
         isChoose: false,
+        punishment: {
+            points: -20,
+            type: 'SYMBOL',
+            name: ['Mutant'],
+            need: {
+                count: 2,
+            },
+        },
     },
     {
         id: 2,
@@ -15,6 +23,15 @@ export const cardsValue: Card[] = [
         basePoints: 14,
         category: 'Schurke',
         symbols: ['Mutant'],
+        punishment: {
+            points: -20,
+            type: 'SYMBOL',
+            name: ['Intel'],
+            need: {
+                count: 2,
+            },
+            specialNeed: 'Mystique',
+        },
         isChoose: false,
     },
     {
@@ -23,6 +40,14 @@ export const cardsValue: Card[] = [
         basePoints: -7,
         category: 'Schurke',
         symbols: [],
+        bonus: [
+            {
+                points: 7,
+                type: 'SYMBOL',
+                name: ['Flug', 'Reichweite'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -31,6 +56,14 @@ export const cardsValue: Card[] = [
         basePoints: 18,
         category: 'Schurke',
         symbols: ['Asgard'],
+        punishment: {
+            points: -20,
+            type: 'SYMBOL',
+            name: ['Asgard'],
+            need: {
+                count: 2,
+            },
+        },
         isChoose: false,
     },
     {
@@ -39,6 +72,12 @@ export const cardsValue: Card[] = [
         basePoints: 15,
         category: 'Schurke',
         symbols: ['Boss'],
+        punishment: {
+            points: -3,
+            type: 'CATEGORY',
+            name: ['Held'],
+            every: true,
+        },
         isChoose: false,
     },
     {
@@ -47,6 +86,14 @@ export const cardsValue: Card[] = [
         basePoints: 14,
         category: 'Schurke',
         symbols: ['Boss'],
+        punishment: {
+            points: -20,
+            type: 'SYMBOL',
+            name: ['Tech'],
+            need: {
+                count: 2,
+            },
+        },
         isChoose: false,
     },
     {
@@ -71,6 +118,7 @@ export const cardsValue: Card[] = [
         basePoints: 15,
         category: 'Schurke',
         symbols: ['Asgard'],
+        specialRule: 'Loki',
         isChoose: false,
     },
     {
@@ -80,6 +128,22 @@ export const cardsValue: Card[] = [
         category: 'Schurke',
         symbols: [],
         isChoose: false,
+        bonus: [
+            {
+                points: 5,
+                type: 'SYMBOL',
+                name: ['Urban'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
+        punishment: {
+            points: -5,
+            type: 'CATEGORY',
+            name: ['Manoever'],
+            every: true,
+        },
     },
     {
         id: 11,
@@ -87,6 +151,14 @@ export const cardsValue: Card[] = [
         basePoints: -9,
         category: 'Schurke',
         symbols: ['Wakanda'],
+        bonus: [
+            {
+                points: 9,
+                type: 'SYMBOL',
+                name: ['Wakanda'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -103,6 +175,12 @@ export const cardsValue: Card[] = [
         basePoints: 12,
         category: 'Schurke',
         symbols: ['Gamma', 'Boss'],
+        punishment: {
+            points: -3,
+            type: 'SYMBOL',
+            name: ['Staerke', 'Gamma'],
+            every: true,
+        },
         isChoose: false,
     },
     {
@@ -135,6 +213,14 @@ export const cardsValue: Card[] = [
         basePoints: -10,
         category: 'Schurke',
         symbols: [],
+        bonus: [
+            {
+                points: 5,
+                type: 'SYMBOL',
+                name: [],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -144,6 +230,14 @@ export const cardsValue: Card[] = [
         category: 'Schurke',
         symbols: ['Gamma'],
         isChoose: false,
+        punishment: {
+            points: -20,
+            type: 'SYMBOL',
+            name: ['Staerke'],
+            need: {
+                count: 2,
+            },
+        },
     },
     {
         id: 19,
@@ -159,6 +253,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Zustand',
         symbols: [],
+        bonus: [
+            {
+                points: 4,
+                type: 'CATEGORY',
+                name: ['Held'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -191,6 +293,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Manoever',
         symbols: [],
+        bonus: [
+            {
+                points: 12,
+                type: 'SYMBOL',
+                name: ['Intel', 'Reichweite'],
+                isPair: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -199,6 +309,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Manoever',
         symbols: [],
+        bonus: [
+            {
+                points: 11,
+                type: 'SYMBOL',
+                name: ['Intel', 'Agilitaet'],
+                isPair: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -215,6 +333,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Manoever',
         symbols: [],
+        bonus: [
+            {
+                points: 13,
+                type: 'SYMBOL',
+                name: ['Tech', 'Intel'],
+                isPair: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -223,6 +349,20 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Manoever',
         symbols: ['Intel'],
+        bonus: [
+            {
+                points: 6,
+                type: 'SYMBOL',
+                name: ['Tech'],
+                every: true,
+            },
+            {
+                points: 0,
+                type: 'SYMBOL',
+                name: ['Tech'],
+                addSymbol: 'Intel',
+            },
+        ],
         isChoose: false,
     },
     {
@@ -239,6 +379,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Manoever',
         symbols: [],
+        bonus: [
+            {
+                points: 10,
+                type: 'SYMBOL',
+                name: ['Flug', 'Reichweite'],
+                isPair: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -247,6 +395,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ausruestung',
         symbols: [],
+        bonus: [
+            {
+                points: 9,
+                type: 'SYMBOL',
+                name: ['Tech'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -263,6 +419,20 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ausruestung',
         symbols: ['Wakanda'],
+        bonus: [
+            {
+                points: 7,
+                type: 'SYMBOL',
+                name: ['Wakanda'],
+                every: true,
+            },
+            {
+                points: 7,
+                type: 'CATEGORY',
+                name: ['Ausruestung'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -303,6 +473,14 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Verbuendeter',
         symbols: ['Tech', 'Mutant'],
+        bonus: [
+            {
+                points: 4,
+                type: 'CATEGORY',
+                name: ['Ausruestung'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -319,6 +497,16 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Verbuendeter',
         symbols: ['Intel', 'Asgard'],
+        bonus: [
+            {
+                points: 6,
+                type: 'CARD',
+                name: ['Bifröst'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -327,6 +515,16 @@ export const cardsValue: Card[] = [
         basePoints: 5,
         category: 'Verbuendeter',
         symbols: ['Tech', 'Wuerdig'],
+        bonus: [
+            {
+                points: 8,
+                type: 'CARD',
+                name: ['Thor Odinson / Donnergott'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -335,6 +533,16 @@ export const cardsValue: Card[] = [
         basePoints: 5,
         category: 'Verbuendeter',
         symbols: ['Flug', 'Reichweite'],
+        bonus: [
+            {
+                points: 7,
+                type: 'CARD',
+                name: ['Shadowcat'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -351,6 +559,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Tech', 'Wakanda', 'Urban'],
+        bonus: [
+            {
+                points: 7,
+                type: 'SYMBOL',
+                name: ['Wakanda'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -359,6 +575,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Urban'],
+        bonus: [
+            {
+                points: 4,
+                type: 'SYMBOL',
+                name: ['Staerke', 'Flug'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -367,6 +591,16 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Asgard'],
+        bonus: [
+            {
+                points: 11,
+                type: 'CATEGORY',
+                name: ['Ort'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -383,6 +617,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: [],
+        bonus: [
+            {
+                points: 5,
+                type: 'SYMBOL',
+                name: ['Mutant'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -391,6 +633,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Asgard', 'Urban'],
+        bonus: [
+            {
+                points: 9,
+                type: 'SYMBOL',
+                name: ['Asgard'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -399,6 +649,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Urban'],
+        bonus: [
+            {
+                points: 3,
+                type: 'SYMBOL',
+                name: ['Agilitaet', 'Flug', 'Reichweite'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -407,6 +665,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Urban'],
+        bonus: [
+            {
+                points: 8,
+                type: 'SYMBOL',
+                name: ['Intel'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -423,6 +689,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: [],
+        bonus: [
+            {
+                points: 5,
+                type: 'SYMBOL',
+                name: ['Tech', 'Agilitaet'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -431,6 +705,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Urban'],
+        bonus: [
+            {
+                points: 4,
+                type: 'SYMBOL',
+                name: ['Staerke', 'Tech'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -447,6 +729,14 @@ export const cardsValue: Card[] = [
         basePoints: 0,
         category: 'Ort',
         symbols: ['Urban'],
+        bonus: [
+            {
+                points: 4,
+                type: 'SYMBOL',
+                name: ['Agilitaet', 'Flug'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -455,8 +745,18 @@ export const cardsValue: Card[] = [
         basePoints: 1,
         transformationPoints: 13,
         category: 'Held',
+        basicSymbols: ['Tech', 'Gamma'],
         symbols: ['Tech', 'Gamma'],
         transformationSymbols: ['Gamma', 'Staerke', 'Staerke', 'Staerke'],
+        transformation: [
+            {
+                type: 'SYMBOL',
+                name: 'Gamma',
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -469,10 +769,20 @@ export const cardsValue: Card[] = [
     },
     {
         id: 59,
-        name: 'Shadow Cat',
+        name: 'Shadowcat',
         basePoints: 4,
         category: 'Held',
         symbols: ['Tech', 'Mutant'],
+        bonus: [
+            {
+                points: 4,
+                type: 'CATEGORY',
+                name: ['Ort'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -497,6 +807,14 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Held',
         symbols: ['Staerke', 'Gamma'],
+        bonus: [
+            {
+                points: 5,
+                type: 'SYMBOL',
+                name: ['Gamma'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -521,6 +839,14 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Held',
         symbols: ['Wakanda', 'Agilitaet'],
+        bonus: [
+            {
+                points: 5,
+                type: 'SYMBOL',
+                name: ['Wakanda'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -537,8 +863,25 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         transformationPoints: 12,
         category: 'Held',
+        basicSymbols: ['Staerke', 'Asgard', 'Wuerdig'],
         symbols: ['Staerke', 'Asgard', 'Wuerdig'],
         transformationSymbols: ['Wuerdig', 'Asgard', 'Reichweite', 'Flug', 'Staerke'],
+        transformation: [
+            {
+                type: 'CARD',
+                name: 'Mjölnir',
+                need: {
+                    count: 1,
+                },
+            },
+            {
+                type: 'CATEGORY',
+                name: 'Verbuendeter',
+                need: {
+                    count: 2,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -547,6 +890,16 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Held',
         symbols: ['Agilitaet', 'Mutant'],
+        bonus: [
+            {
+                points: 6,
+                type: 'CATEGORY',
+                name: ['Schurke'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -555,6 +908,14 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Held',
         symbols: ['Reichweite', 'Mutant'],
+        bonus: [
+            {
+                points: 3,
+                type: 'SYMBOL',
+                name: ['Mutant'],
+                every: true,
+            },
+        ],
         isChoose: false,
     },
     {
@@ -571,8 +932,18 @@ export const cardsValue: Card[] = [
         basePoints: 3,
         transformationPoints: 8,
         category: 'Held',
+        basicSymbols: ['Tech', 'Reichweite'],
         symbols: ['Tech', 'Reichweite'],
         transformationSymbols: ['Tech', 'Staerke', 'Flug', 'Reichweite'],
+        transformation: [
+            {
+                type: 'SYMBOL',
+                name: 'Intel',
+                need: {
+                    count: 2,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -605,8 +976,18 @@ export const cardsValue: Card[] = [
         basePoints: 3,
         transformationPoints: 9,
         category: 'Held',
+        basicSymbols: ['Intel', 'Reichweite', 'Mutant'],
         symbols: ['Intel', 'Reichweite', 'Mutant'],
         transformationSymbols: ['Intel', 'Reichweite', 'Reichweite', 'Flug', 'Mutant'],
+        transformation: [
+            {
+                type: 'SYMBOL',
+                name: 'Mutant',
+                need: {
+                    count: 2,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -615,6 +996,24 @@ export const cardsValue: Card[] = [
         basePoints: 3,
         category: 'Held',
         symbols: ['Intel', 'Mutant'],
+        bonus: [
+            {
+                points: 6,
+                type: 'CARD',
+                name: ['Cerebro'],
+                need: {
+                    count: 1,
+                },
+            },
+            {
+                points: 6,
+                type: 'CARD',
+                name: ['Xavier Mansion'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
@@ -631,6 +1030,22 @@ export const cardsValue: Card[] = [
         basePoints: 4,
         category: 'Held',
         symbols: ['Agilitaet', 'Wuerdig'],
+        bonus: [
+            {
+                points: 2,
+                type: 'CATEGORY',
+                name: ['Held'],
+                every: true,
+            },
+            {
+                points: 4,
+                type: 'CARD',
+                name: ['Vibranium Schild'],
+                need: {
+                    count: 1,
+                },
+            },
+        ],
         isChoose: false,
     },
     {
