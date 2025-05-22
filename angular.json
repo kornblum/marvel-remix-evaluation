@@ -15,11 +15,12 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
+                    "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist/marvel-remix-evaluation",
+                        "outputPath": {
+                            "base": "dist/marvel-remix-evaluation"
+                        },
                         "index": "src/index.html",
-                        "main": "src/main.ts",
                         "polyfills": ["zone.js"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
@@ -68,7 +69,8 @@
                                 "input": "src/theme/variables.css"
                             }
                         ],
-                        "scripts": []
+                        "scripts": [],
+                        "browser": "src/main.ts"
                     },
                     "configurations": {
                         "production": {
@@ -87,9 +89,7 @@
                             "outputHashing": "all"
                         },
                         "development": {
-                            "buildOptimizer": false,
                             "optimization": false,
-                            "vendorChunk": true,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true
@@ -101,10 +101,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                          "buildTarget": "marvel-remix-evaluation:build:production"
+                            "buildTarget": "marvel-remix-evaluation:build:production"
                         },
                         "development": {
-                          "buildTarget": "marvel-remix-evaluation:build:development"
+                            "buildTarget": "marvel-remix-evaluation:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -112,7 +112,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                      "buildTarget": "marvel-remix-evaluation:build"
+                        "buildTarget": "marvel-remix-evaluation:build"
                     }
                 },
                 "test": {
